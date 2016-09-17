@@ -25,3 +25,11 @@ endsnippet
 snippet pyshebang "python shebang, useful for virtualenvs" b
 #! `which python`
 endsnippet
+
+snippet cohsegi "coherence segment import" b
+from stamp_pem.coherence_segment import PEMCoherenceSegment
+endsnippet
+
+snippet fstamppem "import stamppem" b
+from stamp_pem.${1:coherence_segment} import ${2:PEMCoherenceSegment}
+endsnippet
