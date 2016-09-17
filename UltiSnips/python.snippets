@@ -1,0 +1,27 @@
+snippet todo "to do item" b
+# TODO: `echo $USER` $1 `!v strftime("%c")`
+endsnippet
+
+snippet npi "import numpy as np" b
+import numpy as np
+endsnippet
+
+snippet fgwpy "from gwpy.$1 import $2" b
+from gwpy.$1 import $2
+endsnippet
+
+snippet fscipy "from scipy import something" b
+from scipy.$1 import $2
+endsnippet
+
+snippet _randn "start randn from numpy"
+np.random.randn($1)
+endsnippet
+
+snippet edited "last edited information" b
+# Last edited by `echo $USER` at `!v strftime("%c")`
+endsnippet
+
+snippet pyshebang "python shebang, useful for virtualenvs" b
+#! `which python`
+endsnippet
