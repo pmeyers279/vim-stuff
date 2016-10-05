@@ -23,6 +23,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'bling/vim-bufferline'
+Plugin 'Shougo/vimshell.vim'
+Plugin 'Shougo/vimproc'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
