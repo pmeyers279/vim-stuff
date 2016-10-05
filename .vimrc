@@ -78,6 +78,7 @@ set showmatch           " highlight matching [{()}]
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
+autocmd FileType py setlocal shiftwidth=4 tabstop=4
 " space open/closes folds
 nnoremap <space> za
 set foldmethod=indent   " fold based on indent level
