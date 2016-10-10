@@ -23,6 +23,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'bling/vim-bufferline'
+Plugin 'davidhalter/jedi'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/vimproc'
 
