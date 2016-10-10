@@ -62,7 +62,7 @@ let g:ultisnips_python_style="numpy"
 let g:UltiSnipsEditSplit="vertical"
 
 " colors and tabs and UI
-colorscheme badwolf 
+" colorscheme badwolf 
 syntax enable           " enable syntax processing
 filetype indent on      " load filetype-specific indent files
 set tabstop=4       " number of visual spaces per TAB
