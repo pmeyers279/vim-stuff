@@ -27,6 +27,7 @@ Plugin 'davidhalter/jedi'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/vimproc'
+"Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
