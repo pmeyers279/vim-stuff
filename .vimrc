@@ -28,6 +28,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/vimproc'
 Plugin 'vim-latex/vim-latex'
+Plugin 'vimwiki/vimwiki'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
