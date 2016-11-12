@@ -27,7 +27,8 @@ Plugin 'davidhalter/jedi'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/vimproc'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-latex/vim-latex'
+Plugin 'vimwiki/vimwiki'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -259,3 +260,9 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
 
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_CompileRule_pdf = "latexmk -pdflatex='pdflatex -file-line-error -synctex=1 -interaction=nonstopmode' -bibtex -pdf $*"
+set iskeyword+=:
