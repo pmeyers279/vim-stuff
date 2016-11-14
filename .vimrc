@@ -57,7 +57,7 @@ filetype plugin indent on    " required
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:ultisnips_python_style="numpy"
@@ -266,3 +266,9 @@ let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_CompileRule_pdf = "latexmk -pdflatex='pdflatex -file-line-error -synctex=1 -interaction=nonstopmode' -bibtex -pdf $*"
 set iskeyword+=:
+
+let g:vimwiki_list = [{
+  \ 'path': '~/vimwiki/',
+  \ 'template_path': '~/vimwiki_static/',
+  \ 'template_default': 'template',
+  \ 'template_ext': '.html'}]
