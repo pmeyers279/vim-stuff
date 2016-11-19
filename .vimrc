@@ -268,7 +268,7 @@ let g:Tex_CompileRule_pdf = "latexmk -pdflatex='pdflatex -file-line-error -synct
 set iskeyword+=:
 
 let g:vimwiki_list = [{
-  \ 'path': '~/vimwiki/',
-  \ 'template_path': '~/vimwiki_static/',
+  \ 'path': '~/notebook/vimwiki/',
+  \ 'template_path': '~/notebook/vimwiki_static/',
   \ 'template_default': 'template',
   \ 'template_ext': '.html'}]
