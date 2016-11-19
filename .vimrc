@@ -23,6 +23,11 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'bling/vim-bufferline'
+Plugin 'davidhalter/jedi'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'Shougo/vimshell.vim'
+Plugin 'Shougo/vimproc'
+Plugin 'vim-latex/vim-latex'
 Plugin 'vimwiki/vimwiki'
 
 " All of your Plugins must be added before the following line
@@ -52,7 +57,7 @@ filetype plugin indent on    " required
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:ultisnips_python_style="numpy"
@@ -61,7 +66,7 @@ let g:ultisnips_python_style="numpy"
 let g:UltiSnipsEditSplit="vertical"
 
 " colors and tabs and UI
-colorscheme badwolf 
+" colorscheme badwolf 
 syntax enable           " enable syntax processing
 filetype indent on      " load filetype-specific indent files
 set tabstop=4       " number of visual spaces per TAB
@@ -77,6 +82,7 @@ set showmatch           " highlight matching [{()}]
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
+autocmd FileType py setlocal shiftwidth=4 tabstop=4
 " space open/closes folds
 nnoremap <space> za
 set foldmethod=indent   " fold based on indent level
@@ -244,3 +250,25 @@ set autoindent
 
 " Folding based on indentation: 
 set foldmethod=indent
+
+" JEDI
+let g:jedi#goto_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<leader>r"
+
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_CompileRule_pdf = "latexmk -pdflatex='pdflatex -file-line-error -synctex=1 -interaction=nonstopmode' -bibtex -pdf $*"
+set iskeyword+=:
+
+let g:vimwiki_list = [{
+  \ 'path': '~/vimwiki/',
+  \ 'template_path': '~/vimwiki_static/',
+  \ 'template_default': 'template',
+  \ 'template_ext': '.html'}]

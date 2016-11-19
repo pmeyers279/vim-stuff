@@ -33,3 +33,26 @@ endsnippet
 snippet fstamppem "import stamppem" b
 from stamp_pem.${1:coherence_segment} import ${2:PEMCoherenceSegment}
 endsnippet
+
+snippet argparser "create an argparser" b
+def parse_command_line():
+	"""
+	parse command line
+	"""
+	parser = optparse.OptionParser()
+	parser.add_option($1, help=$2, default=$3, dest=$4)
+	params, args = parser.parse_args()
+	return params
+endsnippet
+
+snippet opt "add an argperser option" b
+parser.add_option("--$1", "-$2",
+	help="$3", default=$4,
+	dest="$5", type=$6)
+endsnippet
+
+snippet bopt "add an argperser option" b  
+parser.add_option("--$1", "-$2",
+	help="$3", default=$4,
+	dest="$5", action="$6")
+endsnippet
