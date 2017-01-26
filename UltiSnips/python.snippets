@@ -56,3 +56,19 @@ parser.add_option("--$1", "-$2",
 	help="$3", default=$4,
 	dest="$5", action="$6")
 endsnippet
+
+snippet docstr "make doscstring"
+"""
+$1
+Parameters
+----------
+$2
+Returns
+-------
+"""
+endsnippet
+
+snippet dse "doc string entry"
+$1 : \`$2\`
+    $3
+endsnippet
