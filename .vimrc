@@ -3,6 +3,7 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/fzf
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -11,8 +12,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
+Plugin 'junegunn/limelight.vim'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
+Plugin 'junegunn/goyo.vim'
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/badwolf'
@@ -30,6 +34,8 @@ Plugin 'Shougo/vimproc'
 Plugin 'vim-latex/vim-latex'
 Plugin 'vimwiki/vimwiki'
 Plugin 'tpope/vim-surround'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -243,7 +249,6 @@ au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 
 " For full syntax highlighting:
 let python_highlight_all=1
-"``syntax on``
 
 " Automatically indent based on file type: ``filetype indent on``
 " Keep indentation level from previous line: 
@@ -251,6 +256,8 @@ set autoindent
 
 " Folding based on indentation: 
 set foldmethod=indent
+
+autocmd BufEnter,BufRead,BufNewFile *.py    set iskeyword-=:
 
 " JEDI
 let g:jedi#goto_command = "<leader>d"
@@ -266,10 +273,33 @@ let g:tex_flavor='latex'
 
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_CompileRule_pdf = "latexmk -pdflatex='pdflatex -file-line-error -synctex=1 -interaction=nonstopmode' -bibtex -pdf $*"
-set iskeyword+=:
 
 let g:vimwiki_list = [{
   \ 'path': '~/notebook/vimwiki/',
   \ 'template_path': '~/notebook/vimwiki_static/',
   \ 'template_default': 'template',
   \ 'template_ext': '.html'}]
+" Limelight
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+" Default: 0.5
+let g:limelight_default_coefficient = 0.7
+
+" Number of preceding/following paragraphs to include (default: 0)
+let g:limelight_paragraph_span = 1
+
+" Beginning/end of paragraph
+"   When there's no empty line between the paragraphs
+"   and each paragraph starts with indentation
+let g:limelight_bop = '^\s'
+let g:limelight_eop = '\ze\n^\s'
+
+" Highlighting priority (default: 10)
+"   Set it to -1 not to overrule hlsearch
+let g:limelight_priority = -1
